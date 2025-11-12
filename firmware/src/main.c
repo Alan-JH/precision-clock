@@ -4,7 +4,7 @@
 #include "hardware/timer.h"
 #include "hardware/irq.h"
 
-static char msg[16] = {
+static char disp[16] = { // Display raw
     0x3F, // seven-segment value of 0
     0x06, // seven-segment value of 1
     0x5B, // seven-segment value of 2

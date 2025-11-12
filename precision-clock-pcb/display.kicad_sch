@@ -8641,7 +8641,7 @@
 				)
 			)
 		)
-		(property "Value" "47R"
+		(property "Value" "120R"
 			(at 190.5 161.29 90)
 			(effects
 				(font
@@ -9165,12 +9165,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "3V3"
-			(at 27.94 124.46 0)
+		(property "Value" "+3V3"
+			(at 30.48 128.2699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -11347,7 +11348,7 @@
 				)
 			)
 		)
-		(property "Value" "47R"
+		(property "Value" "120R"
 			(at 130.81 161.29 90)
 			(effects
 				(font
@@ -14242,12 +14243,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "3V3"
-			(at 27.94 168.91 0)
+		(property "Value" "+3V3"
+			(at 30.48 172.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
