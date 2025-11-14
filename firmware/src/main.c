@@ -3,7 +3,8 @@
 #include "pico/stdlib.h"
 #include "hardware/timer.h"
 #include "hardware/irq.h"
-
+#include "hardware/adc.h"
+#include "hardware/dma.h"
 #include "clock.h"
 
 static char disp[16] = { // Display raw
@@ -11,6 +12,16 @@ static char disp[16] = { // Display raw
 };
 static uint8_t digit; // Current digit being displayed
 extern char font[]; // Font mapping for 7-segment display
+
+#define ADC_PIN 45       // GPIO29 = ADC3
+#define ADC_INPUT 5
+#define VREF 3.3f
+#define ADC_MAX_COUNT 4095.0f
+#define LOW_VOLTAGE_THRESH 2.8f
+#define VOLTAGE_RECOVER_THRESH 2.9f   // hysteresis reset
+#define BATTERY_SAMPLE_MS 500  
+volatile uint16_t adc_fifo_out = 0;
+volatile bool battery_low_flag = false;
 
 Time localclk;
 
@@ -61,25 +72,85 @@ void clock_ms_update_isr()
     return;
 }
 
+void init_dma(void) {
+    dma_hw->ch[0].read_addr  = &adc_hw->fifo;
+    dma_hw->ch[0].write_addr = &adc_fifo_out;
+    dma_hw->ch[0].transfer_count =
+        (DMA_CH0_TRANS_COUNT_MODE_VALUE_TRIGGER_SELF << 28) | 1;
+    dma_hw->ch[0].ctrl_trig = 0;
+
+    uint32_t temp =
+        (DMA_CH0_CTRL_TRIG_DATA_SIZE_VALUE_SIZE_HALFWORD
+         << DMA_CH0_CTRL_TRIG_DATA_SIZE_LSB);
+    temp |= (DREQ_ADC << DMA_CH0_CTRL_TRIG_TREQ_SEL_LSB);
+    temp |= (1u << DMA_CH0_CTRL_TRIG_EN_LSB);
+    dma_hw->ch[0].ctrl_trig = temp;
+}
+
+void init_adc_freerun(void) {
+    adc_init();
+    adc_gpio_init(ADC_PIN);
+    adc_select_input(ADC_INPUT);
+    hw_set_bits(&adc_hw->cs, ADC_CS_START_MANY_BITS); // continuous conversions
+}
+
+void init_adc_dma(void) {
+    init_dma();
+    init_adc_freerun();
+    adc_hw->fcs |= ADC_FCS_EN_BITS;       // enable FIFO
+    adc_hw->fcs |= ADC_FCS_DREQ_EN_BITS;  // enable DMA requests
+}
+
+void battery_check_isr(void) {
+    hw_clear_bits(&timer0_hw->intr, 1 << 2);
+
+    float vbat = (adc_fifo_out * VREF) / ADC_MAX_COUNT;
+    printf("Battery voltage: %.3f V\n", vbat);
+
+    // low-voltage detect
+    if (!battery_low_flag && vbat <= LOW_VOLTAGE_THRESH) {
+        battery_low_flag = true;
+        printf("Backup battery low (%.3f V)\n", vbat);
+        // trigger FSM action or LED here
+    }
+    // battery replace detect
+    else if (battery_low_flag && vbat >= VOLTAGE_RECOVER_THRESH) {
+        battery_low_flag = false;
+        printf("Battery replaced (%.3f V)\n", vbat);
+        // clear FSM flag or LED here
+    }
+
+    // re-arm alarm 2 for next check
+    timer0_hw->alarm[2] =
+        (uint32_t)(timer0_hw->timerawl + BATTERY_SAMPLE_MS * 1000ULL);
+}
 void init_timers()
 {
     // Enable the interrupt for alarm 0 and 1
-    hw_set_bits(&timer0_hw->inte, 0b11);
+    hw_set_bits(&timer0_hw->inte, 0b111);
     // Set irq handler for alarm irq 0 and 1
     irq_set_exclusive_handler(TIMER0_IRQ_0, clock_ms_update_isr);
     irq_set_exclusive_handler(TIMER0_IRQ_1, clock_disp_update_isr);
+    irq_set_exclusive_handler(TIMER0_IRQ_2, battery_check_isr);
+
     // Enable the alarm irqs
     irq_set_enabled(TIMER0_IRQ_0, 1);
     irq_set_enabled(TIMER0_IRQ_1, 1);
+    irq_set_enabled(TIMER0_IRQ_2, 1);
     
     // Set timer 0 trigger time - 1ms
     uint64_t target_0 = timer0_hw->timerawl + 1000;
     // Set timer 1 trigger time - 250us - 4 updates per ms
     uint64_t target_1 = timer0_hw->timerawl + 10;
+
+    uint64_t target_2 = timer0_hw->timerawl + (BATTERY_SAMPLE_MS * 1000ULL); // 5 s
+
     // Write the lower 32 bits of the target time to the alarm which
     // will arm it
     timer0_hw->alarm[0] = (uint32_t) target_0;
     timer0_hw->alarm[1] = (uint32_t) target_1;
+    timer0_hw->alarm[2] = (uint32_t) target_2;// 5 s
+
 }
 
 void clock_init()
@@ -135,6 +206,7 @@ int main()
     // Configures our microcontroller to 
     // communicate over UART through the TX/RX pins
     stdio_init_all();
+    init_adc_dma();
 
     clock_init();
 
