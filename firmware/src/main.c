@@ -72,8 +72,9 @@ void clock_ms_update_isr()
     return;
 }
 
-void init_dma(void) {
-    dma_hw->ch[0].read_addr  = &adc_hw->fifo;
+void init_dma(void)
+{
+    dma_hw->ch[0].read_addr = &adc_hw->fifo;
     dma_hw->ch[0].write_addr = &adc_fifo_out;
     dma_hw->ch[0].transfer_count =
         (DMA_CH0_TRANS_COUNT_MODE_VALUE_TRIGGER_SELF << 28) | 1;
@@ -87,43 +88,45 @@ void init_dma(void) {
     dma_hw->ch[0].ctrl_trig = temp;
 }
 
-void init_adc_freerun(void) {
+void init_adc_freerun(void)
+{
     adc_init();
     adc_gpio_init(ADC_PIN);
     adc_select_input(ADC_INPUT);
     hw_set_bits(&adc_hw->cs, ADC_CS_START_MANY_BITS); // continuous conversions
 }
 
-void init_adc_dma(void) {
+void init_adc_dma(void)
+{
     init_dma();
     init_adc_freerun();
-    adc_hw->fcs |= ADC_FCS_EN_BITS;       // enable FIFO
-    adc_hw->fcs |= ADC_FCS_DREQ_EN_BITS;  // enable DMA requests
+    adc_hw->fcs |= ADC_FCS_EN_BITS;      // enable FIFO
+    adc_hw->fcs |= ADC_FCS_DREQ_EN_BITS; // enable DMA requests
 }
 
-void battery_check_isr(void) {
+void battery_check_isr(void)
+{
     hw_clear_bits(&timer0_hw->intr, 1 << 2);
 
     float vbat = (adc_fifo_out * VREF) / ADC_MAX_COUNT;
     printf("Battery voltage: %.3f V\n", vbat);
 
     // low-voltage detect
-    if (!battery_low_flag && vbat <= LOW_VOLTAGE_THRESH) {
+    if (!battery_low_flag && vbat <= LOW_VOLTAGE_THRESH)
+    {
         battery_low_flag = true;
         printf("Backup battery low (%.3f V)\n", vbat);
-        // trigger FSM action or LED here
     }
     // battery replace detect
-    else if (battery_low_flag && vbat >= VOLTAGE_RECOVER_THRESH) {
+    else if (battery_low_flag && vbat >= VOLTAGE_RECOVER_THRESH)
+    {
         battery_low_flag = false;
         printf("Battery replaced (%.3f V)\n", vbat);
-        // clear FSM flag or LED here
     }
-
     // re-arm alarm 2 for next check
-    timer0_hw->alarm[2] =
-        (uint32_t)(timer0_hw->timerawl + BATTERY_SAMPLE_MS * 1000ULL);
+    timer0_hw->alarm[2] = (uint32_t)(timer0_hw->timerawl + BATTERY_SAMPLE_MS * 1000ULL);
 }
+
 void init_timers()
 {
     // Enable the interrupt for alarm 0 and 1
