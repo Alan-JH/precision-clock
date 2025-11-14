@@ -3,4 +3,5 @@
   (lib (name "RP2350_80QFN_minimal")(type "KiCad")(uri "${KIPRJMOD}/RP2350_80QFN_minimal.pretty")(options "")(descr ""))
   (lib (name "PA1616S")(type "KiCad")(uri "${KIPRJMOD}/PA1616S.pretty")(options "")(descr ""))
   (lib (name "Display_Custom")(type "KiCad")(uri "${KIPRJMOD}/Display_Custom.pretty")(options "")(descr ""))
+  (lib (name "Battery_Custom")(type "KiCad")(uri "${KIPRJMOD}/Battery_Custom.pretty")(options "")(descr ""))
 )
