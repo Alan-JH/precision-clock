@@ -1420,6 +1420,16 @@
 		)
 		(uuid "bb40ab69-5b85-412c-a76b-1df7df6b9099")
 	)
+	(label "ANT"
+		(at 102.87 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0553dd4b-c764-4662-a463-1baeccea9b36")
+	)
 	(hierarchical_label "TX"
 		(shape output)
 		(at 168.91 64.77 0)
