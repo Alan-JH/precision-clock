@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define DEFAULT_DAY 1
-#define DEFAULT_MONTH 1
+#define DEFAULT_DAY 14
+#define DEFAULT_MONTH 11
 #define DEFAULT_YEAR 2025
 
 typedef struct board_time
