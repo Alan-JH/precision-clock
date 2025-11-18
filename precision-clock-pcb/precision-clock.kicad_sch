@@ -9239,6 +9239,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C338103"
+			(at 30.48 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CGA2B2C0G1H150JT0Y0F"
+			(at 30.48 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "62b753dd-8db4-42dc-9d1e-5e2e11e72bb6")
 		)
@@ -9436,6 +9454,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C138021 "
+			(at 265.43 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-0727RL"
+			(at 265.43 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ec184c23-fa03-4e24-a026-f741cd14e9f0")
 		)
@@ -9496,6 +9532,24 @@
 		)
 		(property "Description" ""
 			(at 265.43 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C138021 "
+			(at 265.43 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-0727RL"
+			(at 265.43 114.3 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9637,6 +9691,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 261.62 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 261.62 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "10504978-2ae4-4b75-b20f-30dc13378930")
 		)
@@ -9698,6 +9770,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 273.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 273.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 273.05 76.2 0)
 			(effects
 				(font
@@ -9775,6 +9865,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 284.48 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 284.48 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c8f3bad6-8352-4653-9de3-4c2be02cc87b")
 		)
@@ -9836,6 +9944,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 295.91 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 295.91 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 295.91 76.2 0)
 			(effects
 				(font
@@ -9913,6 +10039,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 307.34 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 307.34 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6195ca3c-f306-438a-bc57-aa1092e3e238")
 		)
@@ -9974,6 +10118,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 318.77 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 318.77 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 318.77 76.2 0)
 			(effects
 				(font
@@ -10049,6 +10211,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106235 "
+			(at 63.5 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 63.5 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ae71747e-f962-46ee-8241-094d275d40c6")
 		)
@@ -10111,6 +10291,24 @@
 		)
 		(property "Description" ""
 			(at 45.72 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C20625731 "
+			(at 45.72 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "ABM8-272-T3"
+			(at 45.72 168.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10258,6 +10456,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C32635"
+			(at 212.09 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL21B106KPQNNNE"
+			(at 212.09 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ffe0971f-113f-4544-8901-263fe84029f7")
 		)
@@ -10390,6 +10606,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106232"
+			(at 322.58 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100RL"
+			(at 322.58 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "89d23a07-763a-48ea-b9fd-17cc0478ec2f")
 		)
@@ -10459,6 +10693,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C32635"
+			(at 76.2 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL21B106KPQNNNE"
+			(at 76.2 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "60e37d65-11cd-4882-a118-a126a58c3910")
 		)
@@ -10519,6 +10771,24 @@
 		)
 		(property "Description" ""
 			(at 34.29 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106231 "
+			(at 34.29 205.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-070RL"
+			(at 34.29 205.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10660,6 +10930,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 181.61 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 181.61 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b78ca939-293b-4904-bc91-c0f37b04d3a5")
 		)
@@ -10724,6 +11012,24 @@
 			)
 		)
 		(property "Description" "Very low capacitance ESD protection diode, 2 data-line, SOT-666"
+			(at 69.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C15999 "
+			(at 69.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "USBLC6-2P6"
 			(at 69.85 71.12 0)
 			(effects
 				(font
@@ -10811,6 +11117,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106235 "
+			(at 157.48 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 157.48 175.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5584006f-2336-4170-865b-a8205b3c7084")
 		)
@@ -10872,6 +11196,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 250.19 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 250.19 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 250.19 76.2 0)
 			(effects
 				(font
@@ -11014,6 +11356,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 330.2 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 330.2 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5ae90d49-e3a3-43b8-b6ab-10ea5b172acb")
 		)
@@ -11141,6 +11501,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 213.36 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C42415655 "
+			(at 213.36 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RP2350B"
 			(at 213.36 154.94 0)
 			(effects
 				(font
@@ -11454,6 +11832,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2798978 "
+			(at 148.59 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "PTS647SK38SMTR2 LFS "
+			(at 148.59 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2921d0ba-defc-4cd6-bf43-064b300f15ac")
 		)
@@ -11654,6 +12050,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2900269"
+			(at 124.46 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "SFH 320"
+			(at 124.46 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "061f2c3f-750c-415e-aa0f-e115233c0357")
 		)
@@ -11786,6 +12200,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106232"
+			(at 322.58 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100RL"
+			(at 322.58 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5946a999-8133-4d3b-8ddd-cdbb983b60d1")
 		)
@@ -11847,6 +12279,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 35.56 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 35.56 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 35.56 105.41 0)
 			(effects
 				(font
@@ -11922,6 +12372,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C105872"
+			(at 50.8 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-075K1L"
+			(at 50.8 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c53a9bbb-3788-4a2d-8a96-b2e59680b82e")
 		)
@@ -11983,6 +12451,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 105.41 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 105.41 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 105.41 224.79 0)
 			(effects
 				(font
@@ -12061,6 +12547,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77004"
+			(at 168.91 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" " GRM155R61A475KEAAD"
+			(at 168.91 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c170ad4b-f2ca-4d1a-8761-75a326f77ef6")
 		)
@@ -12122,6 +12626,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 129.54 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 129.54 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 129.54 255.27 0)
 			(effects
 				(font
@@ -12192,6 +12714,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 149.86 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C42411119 "
+			(at 149.86 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "AOTA-B201610S3R3-101-T"
 			(at 149.86 118.11 0)
 			(effects
 				(font
@@ -12398,6 +12938,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 45.72 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" ""
+			(at 45.72 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "d54f6d6a-4b00-4495-8236-b439d147c315")
 		)
@@ -12489,6 +13047,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106235 "
+			(at 57.15 200.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 57.15 200.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1b6ca921-51e3-4aa6-8cd2-97528a4bb251")
 		)
@@ -12552,6 +13128,24 @@
 		)
 		(property "Description" ""
 			(at 118.11 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C2798978 "
+			(at 118.11 270.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "PTS647SK38SMTR2 LFS "
+			(at 118.11 270.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12628,6 +13222,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C338103"
+			(at 30.48 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CGA2B2C0G1H150JT0Y0F"
+			(at 30.48 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "26c6e147-795e-4cb7-8bec-08e567ac7f75")
 		)
@@ -12688,6 +13300,24 @@
 		)
 		(property "Description" ""
 			(at 36.83 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106235 "
+			(at 36.83 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 36.83 195.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12895,6 +13525,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C32635"
+			(at 111.76 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL21B106KPQNNNE"
+			(at 111.76 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cd779765-e43f-479c-ad7d-822095cf3469")
 		)
@@ -12957,6 +13605,24 @@
 			)
 		)
 		(property "Description" "Silicon NPN Phototransistor, PLCC-2"
+			(at 95.25 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C2900269"
+			(at 95.25 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "SFH 320"
 			(at 95.25 215.9 0)
 			(effects
 				(font
@@ -13100,6 +13766,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77004"
+			(at 134.62 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" " GRM155R61A475KEAAD"
+			(at 134.62 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ca176809-787c-4369-b411-1dc9f9d075f0")
 		)
@@ -13160,6 +13844,24 @@
 		)
 		(property "Description" ""
 			(at 50.8 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C105872"
+			(at 50.8 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-075K1L"
+			(at 50.8 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13292,6 +13994,24 @@
 			)
 		)
 		(property "Description" "USB 2.0-only 14P Type-C Receptacle connector"
+			(at 31.75 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C2988369"
+			(at 31.75 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" " GT-USB-7010ASV"
 			(at 31.75 53.34 0)
 			(effects
 				(font
@@ -13471,6 +14191,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106235 "
+			(at 57.15 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 57.15 195.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cae688a1-7a8e-4d80-9a03-475e317c2227")
 		)
@@ -13531,6 +14269,24 @@
 		)
 		(property "Description" ""
 			(at 161.29 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106235 "
+			(at 161.29 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 161.29 133.35 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13736,6 +14492,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106232"
+			(at 322.58 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100RL"
+			(at 322.58 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "af73de19-a218-4459-ae86-eedaddf6a206")
 		)
@@ -13872,6 +14646,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2798978 "
+			(at 118.11 254 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "PTS647SK38SMTR2 LFS "
+			(at 118.11 254 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e19b2a37-238c-4ad9-935f-917e95905d06")
 		)
@@ -13933,6 +14725,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 158.75 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 158.75 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 158.75 76.2 0)
 			(effects
 				(font
@@ -14010,6 +14820,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c0111344-7e22-495e-bc15-132686977fdf")
 		)
@@ -14070,6 +14898,24 @@
 		)
 		(property "Description" ""
 			(at 157.48 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C138002"
+			(at 157.48 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-0733RL"
+			(at 157.48 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14345,6 +15191,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77004"
+			(at 170.18 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" " GRM155R61A475KEAAD"
+			(at 170.18 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "36ee9a73-693e-4964-a393-de9bdb0dd3b5")
 		)
@@ -14406,6 +15270,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 238.76 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 238.76 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 238.76 76.2 0)
 			(effects
 				(font
@@ -14549,6 +15431,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2798978 "
+			(at 144.78 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "PTS647SK38SMTR2 LFS "
+			(at 144.78 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "407deb8c-f98d-40bc-a26c-fd71b13b3e38")
 		)
@@ -14613,6 +15513,24 @@
 		)
 		(property "Description" "128Mbit / 16MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, SOIC-8"
 			(at 49.53 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C97521"
+			(at 49.53 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "W25Q128JVSIQ"
+			(at 49.53 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14708,6 +15626,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77004"
+			(at 123.19 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" " GRM155R61A475KEAAD"
+			(at 123.19 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "84e70b4e-b4a7-4e77-b665-7c87366e5049")
 		)
@@ -14768,6 +15704,24 @@
 		)
 		(property "Description" ""
 			(at 322.58 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106232"
+			(at 322.58 143.51 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100RL"
+			(at 322.58 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14836,6 +15790,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 135.89 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 135.89 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 135.89 224.79 0)
 			(effects
 				(font
@@ -14970,6 +15942,24 @@
 		)
 		(property "Description" ""
 			(at 57.15 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106235 "
+			(at 57.15 203.2 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 57.15 203.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15309,6 +16299,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C60490"
+			(at 127 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-0710KL"
+			(at 127 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f4be9faf-eb7a-4c9e-8552-95839b59fce7")
 		)
@@ -15441,6 +16449,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C106235 "
+			(at 57.15 198.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 57.15 198.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "28bd9324-efd8-4d63-930d-f866297c9d14")
 		)
@@ -15565,6 +16591,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 93.98 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C9662 "
+			(at 93.98 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "LM1117MPX-3.3/NOPB"
 			(at 93.98 38.1 0)
 			(effects
 				(font
@@ -15832,6 +16876,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 97.79 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C60490"
+			(at 97.79 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-0710KL"
 			(at 97.79 224.79 0)
 			(effects
 				(font

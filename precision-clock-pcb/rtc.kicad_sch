@@ -2170,6 +2170,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C52895"
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "BSS138"
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "956f2517-c292-418b-ba08-37e7400d4e06")
 		)
@@ -2243,6 +2261,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C29936 "
+			(at 147.32 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL10B105KA8NNNC"
+			(at 147.32 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3751bc89-7649-4b97-8ad7-0adff70a033f")
 		)
@@ -2303,6 +2339,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 102.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C105871"
+			(at 102.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-074K7L"
 			(at 102.87 78.74 0)
 			(effects
 				(font
@@ -2381,6 +2435,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C29936 "
+			(at 77.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL10B105KA8NNNC"
+			(at 77.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2c896646-a671-4b2f-836e-4c304052f192")
 		)
@@ -2443,6 +2515,24 @@
 			)
 		)
 		(property "Description" "±5ppm, I2C Real-Time Clock with SRAM SOIC-8"
+			(at 129.54 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C2827535"
+			(at 129.54 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "DS3232MZ+TRL"
 			(at 129.54 86.36 0)
 			(effects
 				(font
@@ -2536,6 +2626,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C60491 "
+			(at 146.05 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100KL"
+			(at 146.05 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e70cfd1c-e291-4342-89df-7f42c11c678e")
 		)
@@ -2598,6 +2706,24 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C5495443"
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "2895"
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -2743,6 +2869,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2932927"
+			(at 90.17 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "BSS83PH6327"
+			(at 90.17 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "90614008-52a5-4ef0-8ff2-5b798805b070")
 		)
@@ -2808,6 +2952,24 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 152.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
+			(at 152.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" ""
 			(at 152.4 81.28 0)
 			(effects
 				(font
@@ -3070,6 +3232,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 110.49 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C105871"
+			(at 110.49 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-074K7L"
 			(at 110.49 77.47 0)
 			(effects
 				(font
@@ -3408,6 +3588,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C60491 "
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100KL"
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "36e98784-67da-45cf-8b33-72839323df2d")
 		)
@@ -3544,6 +3742,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 133.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 133.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "abb0f0fe-7c9f-4372-a85b-c5fda1c42b23")
 		)
@@ -3604,6 +3820,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 95.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C138033 "
+			(at 95.25 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071ML"
+			(at 95.25 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)

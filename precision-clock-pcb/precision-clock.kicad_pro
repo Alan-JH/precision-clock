@@ -508,14 +508,14 @@
       {
         "clearance": 0.127,
         "diff_pair_gap": 0.2032,
-        "diff_pair_width": 0.19939,
+        "diff_pair_width": 0.203708,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Impedance",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.286258,
+        "track_width": 0.295402,
         "via_diameter": 0.6,
         "via_drill": 0.3
       }
@@ -546,9 +546,9 @@
       "idf": "",
       "netlist": "",
       "plot": "Outputs/",
-      "pos_files": "",
+      "pos_files": "Outputs/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "precision-clock.step",
       "svg": "",
       "vrml": ""
     },
@@ -617,13 +617,91 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Availability",
+          "name": "Availability",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "JLCPCB PN",
+          "name": "JLCPCB PN",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "MFR PN",
+          "name": "MFR PN",
           "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },

@@ -1583,6 +1583,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C588477 "
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "0734151471"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cd6c73a6-f30e-4427-84de-11b8cbe19881")
 		)
@@ -1652,6 +1670,24 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
+			(at 109.22 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C3030991 "
+			(at 109.22 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "150060RS75000"
 			(at 109.22 80.01 0)
 			(effects
 				(font
@@ -1786,6 +1822,24 @@
 		)
 		(property "Description" "Resistor"
 			(at 101.6 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C106235 "
+			(at 101.6 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071KL"
+			(at 101.6 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1944,6 +1998,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" ""
+			(at 135.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "PA1616S"
+			(at 135.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "15"
 			(uuid "3b1bdbe8-919f-4660-8977-e3e043b73301")
 		)
@@ -2060,6 +2132,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 102.87 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C77014"
+			(at 102.87 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
 			(at 102.87 62.23 0)
 			(effects
 				(font
