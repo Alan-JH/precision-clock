@@ -111,11 +111,11 @@ void init_uart_gps() {
 
     uart_init(GPS, 9600);
 
-    uart_write_blocking(GPS, PMTK_SET_BAUD_115200, strlen(PMTK_SET_BAUD_115200));
-    printf("%d\n%s", strlen(PMTK_SET_BAUD_115200), PMTK_SET_BAUD_115200);
+    uart_write_blocking(GPS, PMTK_SET_BAUD_9600, strlen(PMTK_SET_BAUD_9600));
+    printf("%d\n%s", strlen(PMTK_SET_BAUD_9600), PMTK_SET_BAUD_9600);
     sleep_ms(MAXWAITSENTENCE * 100);
 
-    uart_set_baudrate(GPS, 115200);
+    // uart_set_baudrate(GPS, 115200);
 
     uart_write_blocking(GPS, PMTK_SET_NMEA_OUTPUT_RMCGGA, strlen(PMTK_SET_NMEA_OUTPUT_RMCGGA));
     printf("%d\n%s", strlen(PMTK_SET_NMEA_OUTPUT_RMCGGA), PMTK_SET_NMEA_OUTPUT_RMCGGA);
@@ -138,21 +138,19 @@ uint8_t star_detected = -1;
 void read_nmea_sentence() {
     while (uart_is_readable(GPS)) {
         char c = uart_getc(GPS);
-        if (c == '\n') printf("LF");
-        if (c == '\r') printf("CR");
 
-        // if (c == '\n' && buffer_index > 0 && nmea_buffer[buffer_index - 1] == '\r') {
-        //     nmea_buffer[buffer_index] = '\n'; // Null-terminate the string
-        //     nmea_buffer[buffer_index + 1] = '\0'; // Null-terminate the string
-        //     printf(nmea_buffer);
-        //     test_decode(nmea_buffer);
-        //     buffer_index = 0;
-        // } else if (buffer_index < sizeof(nmea_buffer) - 1) {
-        //     nmea_buffer[buffer_index++] = c;
-        // } else {
-        //     // Buffer overflow, handle as needed
-        //     buffer_index = 0; // Reset
-        // }
+        if (c == '\n' && buffer_index > 0 && nmea_buffer[buffer_index - 1] == '\r') {
+            nmea_buffer[buffer_index] = '\n'; // Null-terminate the string
+            nmea_buffer[buffer_index + 1] = '\0'; // Null-terminate the string
+            printf(nmea_buffer);
+            test_decode(nmea_buffer);
+            buffer_index = 0;
+        } else if (buffer_index < sizeof(nmea_buffer) - 1) {
+            nmea_buffer[buffer_index++] = c;
+        } else {
+            // Buffer overflow, handle as needed
+            buffer_index = 0; // Reset
+        }
     }
 }
 
