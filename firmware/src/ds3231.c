@@ -2,9 +2,10 @@
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/i2c.h"
+#include "clock.h"
 
-#define I2C_SDA_PIN 14
-#define I2C_SCL_PIN 15
+#define I2C_SDA_PIN 36
+#define I2C_SCL_PIN 37
 #define BAUDRATE 100000
 #define RTC_ADDR 0x68
 
@@ -13,7 +14,7 @@ void init_i2c(){
     gpio_set_function(I2C_SCL_PIN, GPIO_FUNC_I2C);
     gpio_pull_up(I2C_SDA_PIN);
     gpio_pull_up(I2C_SCL_PIN);
-    i2c_init(i2c1, BAUDRATE);
+    i2c_init(i2c0, BAUDRATE);
 }
 
 uint8_t dec_to_bcd(uint8_t dec) {
@@ -28,37 +29,37 @@ uint8_t bcd_to_dec(uint8_t bcd) {
 //set RTC seconds
 void set_rtc_seconds(uint8_t sec){
     uint8_t addr_val[2] = {0x00, dec_to_bcd(sec)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set RTC minutes
 void set_rtc_minutes(uint8_t min){
     uint8_t addr_val[2] = {0x01, dec_to_bcd(min)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set RTC hours
 void set_rtc_hours(uint8_t hours){
     uint8_t addr_val[2] = {0x02, dec_to_bcd(hours)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set RTC Date
 void set_rtc_date(uint8_t date){
     uint8_t addr_val[2] = {0x04, dec_to_bcd(date)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set RTC Month
 void set_rtc_month(uint8_t month){
     uint8_t addr_val[2] = {0x05, dec_to_bcd(month)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set RTC Year
 void set_rtc_year(uint8_t year){
     uint8_t addr_val[2] = {0x06, dec_to_bcd(year)}; 
-    i2c_write_blocking(i2c1, RTC_ADDR, addr_val, 2, false);
+    i2c_write_blocking(i2c0, RTC_ADDR, addr_val, 2, false);
 }
 
 //set rtc using Time Struct
@@ -72,26 +73,22 @@ void set_rtc_all(Time time){
 }
 
 //reads rtc data returns Time Struct
-Time read_rtc() {
-    Time current_time;
+void read_rtc(Time * time) {
     uint8_t num_bytes; //number of bytes read
     uint8_t rtc_data[7];
     uint8_t start_reg = 0x00;  // start at seconds register
-    i2c_write_blocking(i2c1, RTC_ADDR, &start_reg, 1, true); // set read incriment to 0x0 reg
-    num_bytes = i2c_read_blocking(i2c1, RTC_ADDR, rtc_data, 7, false); //read 7 bytes (rtc data)
+    i2c_write_blocking(i2c0, RTC_ADDR, &start_reg, 1, true); // set read incriment to 0x0 reg
+    num_bytes = i2c_read_blocking(i2c0, RTC_ADDR, rtc_data, 7, false); //read 7 bytes (rtc data)
     
     if(num_bytes != 7) {
-        printf("READ ERROR");
+        printf("RTC READ ERROR");
     }
 
     //process and store time data in Time struct
-    current_time.milliseconds = 0;
-    current_time.seconds = bcd_to_dec(rtc_data[0]);
-    current_time.minutes = bcd_to_dec(rtc_data[1]);
-    current_time.hours = bcd_to_dec(rtc_data[2]);
-    current_time.date = bcd_to_dec(rtc_data[4]);
-    current_time.month = bcd_to_dec(rtc_data[5]);
-    current_time.year = bcd_to_dec(rtc_data[6]);
-
-    return current_time;
+    time->seconds = bcd_to_dec(rtc_data[0]);
+    time->minutes = bcd_to_dec(rtc_data[1]);
+    time->hours = bcd_to_dec(rtc_data[2]);
+    time->date = bcd_to_dec(rtc_data[4]);
+    time->month = bcd_to_dec(rtc_data[5]);
+    time->year = bcd_to_dec(rtc_data[6]);
 }

@@ -1,3 +1,7 @@
+#ifndef CLK_H
+
+#define CLK_H
+
 #include <stdio.h>
 
 #define DEFAULT_DAY 14
@@ -14,3 +18,5 @@ typedef struct board_time
     uint8_t seconds;
     uint16_t milliseconds;
 } Time;
+
+#endif
