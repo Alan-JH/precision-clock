@@ -12,7 +12,7 @@
 #define DISPBUS_SIZE 12
 #define DISPBUS_BITS 0xFFF
 #define GPS_PPS_TIMEOUT 10 // Time that clock switches from GPS to RTC mode, in seconds, since last PPS rising edge
-#define CLK_TUNING_STEP 1 // Proportional factor to tune local clock
+#define CLK_TUNING_STEP 0.01 // Proportional factor to tune local clock
 #define RTC_UPDATE_RATE 250 // update rate in ms
 
 // Display function defs
@@ -39,12 +39,12 @@ void pps_isr()
     {
         if (localclk.milliseconds < 500) // If milliseconds is less than 500, assume wraparound and clock is running slightly fast
         {
-            millisecond_update_rate -= CLK_TUNING_STEP; // TODO: Determine if you want proportional control
+            millisecond_update_rate += localclk.milliseconds * CLK_TUNING_STEP; // TODO: Determine if you want proportional control
             localclk.milliseconds = 0; // Correct milliseconds
         }
         else // If milliseconds is 501 to 999, then clock is running slow
         {
-            millisecond_update_rate += CLK_TUNING_STEP;
+            millisecond_update_rate -= (1000 - localclk.milliseconds) * CLK_TUNING_STEP;
             localclk.milliseconds = 0; // Wrap to next second
             localclk.seconds ++;
         }
@@ -53,26 +53,26 @@ void pps_isr()
     memcpy(&last_pps, &localclk, sizeof(Time)); // Copy new current time to PPS
 
     gps_active = 1; // Switch back to GPS mode in case it was previously in RTC mode
-    uint64_t target = timer0_hw->timerawl + 1000000 * GPS_PPS_TIMEOUT;
-    timer0_hw->alarm[2] = (uint32_t) target; // Set new GPS PPS Timeout
+    uint64_t target = timer1_hw->timerawl + 1000000 * GPS_PPS_TIMEOUT;
+    timer1_hw->alarm[0] = (uint32_t) target; // Set new GPS PPS Timeout
 }
 
 void gps_timeout_isr()
 {
-    hw_clear_bits(&timer0_hw->intr, 1 << 2);
+    hw_clear_bits(&timer1_hw->intr, 1 << 0);
     gps_active = 0;
 }
 
 void clock_rtc_update_isr()
 {
-    hw_clear_bits(&timer0_hw->intr, 1 << 3);
+    hw_clear_bits(&timer1_hw->intr, 1 << 1);
     if (gps_active)
         set_rtc_all(localclk); // Update RTC every second if GPS active
     else
         read_rtc(&localclk); // else update time from RTC
     
-    uint64_t target = timer0_hw->timerawl + RTC_UPDATE_RATE * 1000;
-    timer0_hw->alarm[3] = (uint32_t) target;
+    uint64_t target = timer1_hw->timerawl + RTC_UPDATE_RATE * 1000;
+    timer1_hw->alarm[1] = (uint32_t) target;
 }
 
 void clock_ms_update_isr()
@@ -99,36 +99,34 @@ void clock_ms_update_isr()
     update_clock_font(localclk, gps_active);
 }
 
-void timer_isr(void) {
-    uint32_t status = timer_hw->intr;
-
-    if (status & (1 << 0)) clock_ms_update_isr();
-    if (status & (1 << 1)) clock_disp_update_isr();
-    if (status & (1 << 2)) gps_timeout_isr();
-    if (status & (1 << 3)) clock_rtc_update_isr();
-}
-
 void init_timers()
 {
     // Enable the interrupt for alarms
-    hw_set_bits(&timer0_hw->inte, 0xf);
+    hw_set_bits(&timer0_hw->inte, 0x3);
+    hw_set_bits(&timer1_hw->inte, 0x3);
     // Set irq handler for alarm irq 0 and 1
-    irq_set_exclusive_handler(TIMER0_IRQ_0, timer_isr);
+    irq_set_exclusive_handler(TIMER0_IRQ_0, clock_ms_update_isr);
+    irq_set_exclusive_handler(TIMER0_IRQ_1, clock_disp_update_isr);
+    irq_set_exclusive_handler(TIMER1_IRQ_0, gps_timeout_isr);
+    irq_set_exclusive_handler(TIMER1_IRQ_1, clock_rtc_update_isr);
     // Enable the alarm irqs
     irq_set_enabled(TIMER0_IRQ_0, 1);
+    irq_set_enabled(TIMER0_IRQ_1, 1);
+    irq_set_enabled(TIMER1_IRQ_0, 1);
+    irq_set_enabled(TIMER1_IRQ_1, 1);
     
     // Set timer 0 trigger time - 1ms
     uint64_t target_0 = timer0_hw->timerawl + millisecond_update_rate;
-    // Set timer 1 trigger time - 250us - 4 updates per ms
+    // Set timer 1 trigger time
     uint64_t target_1 = timer0_hw->timerawl + 10;
 
-    uint64_t target_3 = timer0_hw->timerawl + RTC_UPDATE_RATE * 1000;
+    uint64_t target_3 = timer1_hw->timerawl + RTC_UPDATE_RATE * 1000;
 
     // Write the lower 32 bits of the target time to the alarm which
     // will arm it
     timer0_hw->alarm[0] = (uint32_t) target_0;
     timer0_hw->alarm[1] = (uint32_t) target_1;
-    timer0_hw->alarm[3] = (uint32_t) target_3;
+    timer1_hw->alarm[1] = (uint32_t) target_3;
 }
 
 void init_gpio()
