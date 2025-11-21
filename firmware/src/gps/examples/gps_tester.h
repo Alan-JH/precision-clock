@@ -8,6 +8,7 @@
 
 #define NUM_NMEA_STRINGS (6)
 #define NMEA_STRING_SIZE (128)
+#define NMEA_BUF_SIZE 128
 
 
 void test_timing();
