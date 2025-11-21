@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
 #include "pico/stdlib.h"
-#include "hardware/timer.h"
-#include "hardware/irq.h"
 
 #include "clock.h"
 
