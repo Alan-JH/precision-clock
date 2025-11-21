@@ -24,6 +24,9 @@ void init_i2c();
 void set_rtc_all(Time time);
 void read_rtc(Time * time);
 
+// GPS function defs
+void read_nmea_sentence();
+
 bool gps_active; // True: GPS ACTIVE | False: RTC TIME
 
 uint16_t millisecond_update_rate; // 1000 by default, increase to slow clock down, decrease to speed clock up
@@ -172,6 +175,7 @@ void clock_init()
 
     init_gpio();
     init_i2c();
+    init_uart_gps();
 
     millisecond_update_rate = 1000;
     gps_active = 0; // Default to GPS off and RTC mode
@@ -193,6 +197,7 @@ int main()
     clock_init();
 
     
-    for (;;);
+    for (;;)
+        read_nmea_sentence();
     return 0;
 }
