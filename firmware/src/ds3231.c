@@ -91,4 +91,5 @@ void read_rtc(Time * time) {
     time->date = bcd_to_dec(rtc_data[4]);
     time->month = bcd_to_dec(rtc_data[5]);
     time->year = bcd_to_dec(rtc_data[6]);
+    time->milliseconds = 0;
 }

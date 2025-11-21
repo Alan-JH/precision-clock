@@ -13,7 +13,7 @@
 #define DISPBUS_BITS 0xFFF
 #define GPS_PPS_TIMEOUT 10 // Time that clock switches from GPS to RTC mode, in seconds, since last PPS rising edge
 #define CLK_TUNING_STEP 0.01 // Proportional factor to tune local clock
-#define RTC_UPDATE_RATE 250 // update rate in ms
+#define RTC_UPDATE_RATE 500 // update rate in ms
 
 // Display function defs
 void clock_disp_update_isr();
@@ -69,8 +69,10 @@ void clock_rtc_update_isr()
     if (gps_active)
         set_rtc_all(localclk); // Update RTC every second if GPS active
     else
+    {
         read_rtc(&localclk); // else update time from RTC
-    
+        localclk.milliseconds = 0;
+    }
     uint64_t target = timer1_hw->timerawl + RTC_UPDATE_RATE * 1000;
     timer1_hw->alarm[1] = (uint32_t) target;
 }
@@ -175,6 +177,7 @@ void clock_init()
     gps_active = 0; // Default to GPS off and RTC mode
 
     read_rtc(&localclk);
+    localclk.milliseconds = 0;
 
     update_clock_font(localclk, gps_active);
 
