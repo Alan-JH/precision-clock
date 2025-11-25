@@ -4,6 +4,7 @@
         "string.h": "c",
         "clock.h": "c",
         "i2c.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "gps.h": "c"
     }
 }

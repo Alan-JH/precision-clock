@@ -2,7 +2,7 @@
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/i2c.h"
-#include "clock.h"
+#include "clock_time.h"
 
 #define I2C_SDA_PIN 36
 #define I2C_SCL_PIN 37

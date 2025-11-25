@@ -42,6 +42,7 @@ THE SOFTWARE.
 #define _GPS_H_
 
 #include <stdint.h>
+#include "clock_time.h"
 
 /* String sizes */
 #define GPS_TIME_STRING_SIZE (25) /**< The size of the timestamp string including the NUL terminator */
@@ -61,6 +62,7 @@ THE SOFTWARE.
 #define GPS_ERROR_CHECKSUM    (3) /**< The checksum did not match the computer value */
 #define GPS_ERROR_TRUNCATED   (4) /**< The input NMEA sentence is incomplete */
 #define GPS_ERROR_UNSUPPORTED (5) /**< An unsupported operation was requested */
+#define GPS_ERROR_PARSE       (6) /**< Parsing error */
 
 /**
  * @brief NMEA fix mode.
@@ -84,7 +86,7 @@ struct gps_tpv
     int32_t longitude;  /**< Longitude in degrees times 10e6 */
     int32_t track;      /**< Course over ground, degrees from true north times 10e3 */
     int32_t speed;      /**< Speed over ground, meters per second times 10e3 */
-    char time[GPS_TIME_STRING_SIZE];    /**< Time stamp in ISO8601 format, UTC */
+    Time * time;          /**< Numerical clock time object */
     char talker_id[GPS_TALKER_ID_SIZE]; /**< Device talker ID */
 };
 

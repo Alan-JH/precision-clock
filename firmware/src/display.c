@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "clock.h"
+#include "clock_time.h"
 #include "pico/stdlib.h"
 #include "hardware/timer.h"
 #include "hardware/irq.h"

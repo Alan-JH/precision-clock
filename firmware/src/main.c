@@ -5,7 +5,7 @@
 
 #include "pico/stdlib.h"
 
-#include "clock.h"
+#include "clock_time.h"
 
 #define PPS_GPIO 2
 #define DISPBUS_LSB 8
@@ -25,6 +25,7 @@ void set_rtc_all(Time time);
 void read_rtc(Time * time);
 
 // GPS function defs
+void init_uart_gps();
 void read_nmea_sentence();
 
 bool gps_active; // True: GPS ACTIVE | False: RTC TIME

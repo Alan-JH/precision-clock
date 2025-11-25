@@ -41,7 +41,7 @@ THE SOFTWARE.
 #define is_digit_0_to_5(c) is_char_in_range(c, '0', '5')
 #define is_digit_0_to_9(c) is_char_in_range(c, '0', '9')
 
-typedef void (*parse_function)(struct gps_tpv *, const char **);
+typedef uint8_t (*parse_function)(struct gps_tpv *, const char **);
 
 static const char NULL_TIME[] = "0000-00-00T00:00:00.000Z";
 
@@ -263,7 +263,7 @@ static int32_t parse_angular_distance(const char *nmea, const char direction)
     return angular_distance * sign;
 }
 
-static void parse_time(char *destination, const char *nmea)
+static uint8_t parse_time(Time *destination, const char *nmea)
 {
     char c0 = *nmea++;
 
@@ -275,67 +275,68 @@ static void parse_time(char *destination, const char *nmea)
     /* ([0-2][0-9]) */
     if (is_digit_0_to_2(c0))
     {
-        destination[11] = c0; /* H */
+        destination->hours = 10 * (uint8_t)(c0 - '0'); /* H */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[12] = c0; /* H */
+        destination->hours += (uint8_t)(c0 - '0'); /* H */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* ([0-5][0-9]) */
     if (is_digit_0_to_5(c0))
     {
-        destination[14] = c0; /* M */
+        destination->minutes = 10 * (uint8_t)(c0 - '0'); /* M */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[15] = c0; /* M */
+        destination->minutes += (uint8_t)(c0 - '0'); /* M */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* ([0-5][0-9]) */
     if (is_digit_0_to_5(c0))
     {
-        destination[17] = c0; /* S */
+        destination->seconds = 10 * (uint8_t)(c0 - '0'); /* S */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[18] = c0; /* S */
+        destination->seconds += (uint8_t)(c0 - '0'); /* S */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* (\.[0-9]{1,3})? */
+    destination->milliseconds = 0;
     if ('.' == c0)
     {
         uint_fast8_t i;
@@ -343,21 +344,18 @@ static void parse_time(char *destination, const char *nmea)
         /* Advance the destination pointer past the decimal point */
         destination += 20;
         c0 = *nmea++;
+        uint8_t factor = 100;
         for (i = 0; is_digit_0_to_9(c0) && (i < 3); ++i)
         {
-            destination[i] = c0;
+            destination->milliseconds += (uint8_t)(c0 - '0') * factor;
+            factor /= 10;
             c0 = *nmea++;
         }
     }
-    else
-    {
-        destination[20] = '0';
-        destination[21] = '0';
-        destination[22] = '0';
-    }
+    return 0;
 }
 
-static void parse_date(char *destination, const char *nmea)
+static uint8_t parse_date(Time *destination, const char *nmea)
 {
     char c0 = *nmea++;
 
@@ -369,74 +367,72 @@ static void parse_date(char *destination, const char *nmea)
     /* ([0-3][0-9]) */
     if (is_digit_0_to_3(c0))
     {
-        destination[8] = c0; /* D */
+        destination->date = 10 * (uint8_t)(c0 - '0'); /* D */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[9] = c0; /* D */
+        destination->date += (uint8_t)(c0 - '0'); /* D */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* ([0-1][0-9]) */
     if (is_digit_0_to_1(c0))
     {
-        destination[5] = c0; /* M */
+        destination->month = 10 * (uint8_t)(c0 - '0'); /* M */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[6] = c0; /* M */
+        destination->month += (uint8_t)(c0 - '0'); /* M */
         c0 = *nmea++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* ([0-9][0-9]) */
-    if (is_digit_0_to_9(c0))
-    {
-        destination[2] = c0; /* Y */
-        c0 = *nmea++;
-    }
-    else
-    {
-        return;
-    }
-
-    if (is_digit_0_to_9(c0))
-    {
-        destination[3] = c0; /* Y */
-        c0 = *nmea++;
-    }
-    else
-    {
-        return;
-    }
-
-    /* Prepend "20" to the year. Hopefully by the year 2100 there will be a
+    destination->year = 2000; /* Prepend "20" to the year. Hopefully by the year 2100 there will be a
      * better standard than NMEA 0183 and we will never need to change this.
      */
-    destination[0] = '2';
-    destination[1] = '0';
+    if (is_digit_0_to_9(c0))
+    {
+        destination->year += 10 * (uint8_t)(c0 - '0'); /* Y */
+        c0 = *nmea++;
+    }
+    else
+    {
+        return 1;
+    }
+
+    if (is_digit_0_to_9(c0))
+    {
+        destination->year += (uint8_t)(c0 - '0'); /* Y */
+        c0 = *nmea++;
+    }
+    else
+    {
+        return 1;
+    }
+    return 0;
 }
 
-static void parse_extended_date(char *destination, const char *day, const char *month, const char *year)
+static uint8_t parse_extended_date(Time *destination, const char *day, const char *month, const char *year)
 {
     uint_fast8_t i;
     char c0;
@@ -451,51 +447,55 @@ static void parse_extended_date(char *destination, const char *day, const char *
     c0 = *day++;
     if (is_digit_0_to_3(c0))
     {
-        destination[8] = c0;
+        destination->date = 10 * (uint8_t)(c0 - '0');
         c0 = *day++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[9] = c0;
+        destination->date += (uint8_t)(c0 - '0');
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* Month */
     c0 = *month++;
     if (is_digit_0_to_1(c0))
     {
-        destination[5] = c0;
+        destination->month = 10 * (uint8_t)(c0 - '0');
         c0 = *month++;
     }
     else
     {
-        return;
+        return 1;
     }
 
     if (is_digit_0_to_9(c0))
     {
-        destination[6] = c0;
+        destination->month += (uint8_t)(c0 - '0');
     }
     else
     {
-        return;
+        return 1;
     }
 
     /* Year */
     c0 = *year++;
+    uint16_t factor = 1000;
+    destination->year = 0;
     for (i = 0; is_digit_0_to_9(c0) && (i < 4); ++i)
     {
-        destination[i] = c0;
+        destination->year += factor * (uint8_t)(c0 - '0');
         c0 = *year++;
+        factor /= 10;
     }
+    return 0;
 }
 
 static int32_t parse_altitude(const char *nmea, const char unit)
@@ -556,52 +556,60 @@ static bool is_status_valid(const char status)
     return false;
 }
 
-static void parse_gga(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_gga(struct gps_tpv *tpv, const char **token)
 {
-    parse_time(tpv->time, token[0]);
+    if (parse_time(tpv->time, token[0])) return GPS_ERROR_PARSE;
     tpv->latitude = parse_angular_distance(token[1], token[2][0]);
     tpv->longitude = parse_angular_distance(token[3], token[4][0]);
     tpv->altitude = parse_altitude(token[8], token[9][0]);
+    return 0;
 }
 
-static void parse_gll(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_gll(struct gps_tpv *tpv, const char **token)
 {
     if (is_status_valid(token[5][0]))
     {
         tpv->latitude = parse_angular_distance(token[0], token[1][0]);
         tpv->longitude = parse_angular_distance(token[2], token[3][0]);
-        parse_time(tpv->time, token[4]);
+        if (parse_time(tpv->time, token[4])) return GPS_ERROR_PARSE;
+        return 0;
     }
+    return GPS_ERROR_PARSE;
 }
 
-static void parse_gsa(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_gsa(struct gps_tpv *tpv, const char **token)
 {
     tpv->mode = parse_mode(token[1][0]);
+    return 0;
 }
 
-static void parse_rmc(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_rmc(struct gps_tpv *tpv, const char **token)
 {
     if (is_status_valid(token[1][0]))
     {
-        parse_time(tpv->time, token[0]);
+        if (parse_time(tpv->time, token[0])) return GPS_ERROR_PARSE;
         tpv->latitude = parse_angular_distance(token[2], token[3][0]);
         tpv->longitude = parse_angular_distance(token[4], token[5][0]);
         tpv->track = parse_track(token[7], 'T');
         tpv->speed = parse_speed(token[6], 'N');
-        parse_date(tpv->time, token[8]);
+        if (parse_date(tpv->time, token[8])) return GPS_ERROR_PARSE;
+        return 0;
     }
+    return GPS_ERROR_PARSE;
 }
 
-static void parse_vtg(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_vtg(struct gps_tpv *tpv, const char **token)
 {
     tpv->track = parse_track(token[0], token[1][0]);
     tpv->speed = parse_speed(token[6], token[7][0]);
+    return 0;
 }
 
-static void parse_zda(struct gps_tpv *tpv, const char **token)
+static uint8_t parse_zda(struct gps_tpv *tpv, const char **token)
 {
-    parse_time(tpv->time, token[0]);
-    parse_extended_date(tpv->time, token[1], token[2], token[3]);
+    if (parse_time(tpv->time, token[0])) return GPS_ERROR_PARSE;
+    if (parse_extended_date(tpv->time, token[1], token[2], token[3])) return GPS_ERROR_PARSE;
+    return 0;
 }
 
 void gps_init_tpv(struct gps_tpv *tpv)
@@ -614,7 +622,13 @@ void gps_init_tpv(struct gps_tpv *tpv)
     tpv->longitude = GPS_INVALID_VALUE;
     tpv->track     = GPS_INVALID_VALUE;
     tpv->speed     = GPS_INVALID_VALUE;
-    strcpy(tpv->time, NULL_TIME);
+    tpv->time->date = DEFAULT_DATE;
+    tpv->time->month = DEFAULT_MONTH;
+    tpv->time->year = DEFAULT_YEAR;
+    tpv->time->hours = 0;
+    tpv->time->minutes = 0;
+    tpv->time->seconds = 0;
+    tpv->time->milliseconds = 0;
     memset(tpv->talker_id, '\0', GPS_TALKER_ID_SIZE);
 }
 
@@ -738,7 +752,8 @@ int gps_decode(struct gps_tpv *tpv, char *nmea)
     if ((c0 != '\r') || (c1 != '\n')) return GPS_ERROR_FOOT;
 
     /* Parse the NMEA sentence tokens */
-    parse(tpv, (const char **)token);
+    if (parse(tpv, (const char **)token))
+        return GPS_ERROR_PARSE;
 
     return GPS_OK;
 }
