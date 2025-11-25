@@ -119,6 +119,29 @@ void clock_ms_update_isr()
     update_clock_font(localclk, gps_active);
 }
 
+void battery_check_isr(void)
+{
+    hw_clear_bits(&timer1_hw->intr, 1 << 2);
+
+    float vbat = (adc_fifo_out * VREF) / ADC_MAX_COUNT;
+    printf("Battery voltage: %.3f V\n", vbat);
+
+    // low-voltage detect
+    if (!battery_low_flag && vbat <= LOW_VOLTAGE_THRESH)
+    {
+        battery_low_flag = true;
+        printf("Backup battery low (%.3f V)\n", vbat);
+    }
+    // battery replace detect
+    else if (battery_low_flag && vbat >= VOLTAGE_RECOVER_THRESH)
+    {
+        battery_low_flag = false;
+        printf("Battery replaced (%.3f V)\n", vbat);
+    }
+    // re-arm alarm 2 for next check
+    timer1_hw->alarm[2] = (uint32_t)(timer1_hw->timerawl + BATTERY_SAMPLE_MS * 1000ULL);
+}
+
 void init_dma(void)
 {
     dma_hw->ch[0].read_addr = &adc_hw->fifo;
@@ -149,29 +172,6 @@ void init_adc_dma(void)
     init_adc_freerun();
     adc_hw->fcs |= ADC_FCS_EN_BITS;      // enable FIFO
     adc_hw->fcs |= ADC_FCS_DREQ_EN_BITS; // enable DMA requests
-}
-
-void battery_check_isr(void)
-{
-    hw_clear_bits(&timer0_hw->intr, 1 << 2);
-
-    float vbat = (adc_fifo_out * VREF) / ADC_MAX_COUNT;
-    printf("Battery voltage: %.3f V\n", vbat);
-
-    // low-voltage detect
-    if (!battery_low_flag && vbat <= LOW_VOLTAGE_THRESH)
-    {
-        battery_low_flag = true;
-        printf("Backup battery low (%.3f V)\n", vbat);
-    }
-    // battery replace detect
-    else if (battery_low_flag && vbat >= VOLTAGE_RECOVER_THRESH)
-    {
-        battery_low_flag = false;
-        printf("Battery replaced (%.3f V)\n", vbat);
-    }
-    // re-arm alarm 2 for next check
-    timer0_hw->alarm[2] = (uint32_t)(timer0_hw->timerawl + BATTERY_SAMPLE_MS * 1000ULL);
 }
 
 void init_timers()
@@ -252,6 +252,7 @@ void clock_init()
     init_gpio();
     init_i2c();
     init_uart_gps();
+    init_adc_dma();
 
     millisecond_update_rate = 1000;
     gps_active = 0; // Default to GPS off and RTC mode
@@ -269,10 +270,8 @@ int main()
     // Configures our microcontroller to 
     // communicate over UART through the TX/RX pins
     stdio_init_all();
-    init_adc_dma();
 
     clock_init();
-
     
     for (;;)
         read_nmea_sentence();
