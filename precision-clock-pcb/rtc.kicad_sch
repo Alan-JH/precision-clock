@@ -2056,7 +2056,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0455cf62-ad53-42b4-9419-3cba9542977e")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR045"
 			(at 77.47 68.58 0)
 			(effects
 				(font
@@ -2106,7 +2106,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR046")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -2122,7 +2122,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a62237f-cdd4-4a33-a459-560d96b153cf")
-		(property "Reference" "Q14"
+		(property "Reference" "Q4"
 			(at 93.98 66.0399 0)
 			(effects
 				(font
@@ -2170,6 +2170,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C52895"
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "BSS138"
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "956f2517-c292-418b-ba08-37e7400d4e06")
 		)
@@ -2182,7 +2200,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "Q14")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -2198,7 +2216,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "266b54a1-4868-4a5a-90d7-0bdcf17a17f0")
-		(property "Reference" "C26"
+		(property "Reference" "C29"
 			(at 151.13 62.2299 0)
 			(effects
 				(font
@@ -2216,7 +2234,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 148.2852 67.31 0)
 			(effects
 				(font
@@ -2243,6 +2261,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C29936 "
+			(at 147.32 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL10B105KA8NNNC"
+			(at 147.32 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3751bc89-7649-4b97-8ad7-0adff70a033f")
 		)
@@ -2252,7 +2288,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "C26")
+					(reference "C29")
 					(unit 1)
 				)
 			)
@@ -2267,7 +2303,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "27cb3a80-f999-4cf1-80a0-06695342f276")
-		(property "Reference" "R41"
+		(property "Reference" "R25"
 			(at 104.394 78.74 0)
 			(effects
 				(font
@@ -2284,7 +2320,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 104.648 78.74 90)
 			(effects
 				(font
@@ -2311,6 +2347,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C105871"
+			(at 102.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-074K7L"
+			(at 102.87 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "896e96ff-28cc-4089-88af-16494551ccd5")
 		)
@@ -2320,7 +2374,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "R41")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -2336,7 +2390,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "31062e23-6d73-430d-85e4-5f9f844f2185")
-		(property "Reference" "C28"
+		(property "Reference" "C27"
 			(at 81.28 57.1499 0)
 			(effects
 				(font
@@ -2354,7 +2408,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.4352 62.23 0)
 			(effects
 				(font
@@ -2381,6 +2435,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C29936 "
+			(at 77.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "CL10B105KA8NNNC"
+			(at 77.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2c896646-a671-4b2f-836e-4c304052f192")
 		)
@@ -2390,7 +2462,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "C28")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -2406,7 +2478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37b29454-df2f-4278-b1ea-80f0e7e39425")
-		(property "Reference" "U4"
+		(property "Reference" "U6"
 			(at 131.6833 96.52 0)
 			(effects
 				(font
@@ -2451,6 +2523,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2827535"
+			(at 129.54 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "DS3232MZ+TRL"
+			(at 129.54 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "a68e111e-06d8-471f-a645-c482e52fbca0")
 		)
@@ -2478,7 +2568,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "U4")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -2493,7 +2583,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3be56cc3-59f7-41bc-8efe-282f8d4d42c5")
-		(property "Reference" "R39"
+		(property "Reference" "R26"
 			(at 146.05 86.614 90)
 			(effects
 				(font
@@ -2509,7 +2599,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 146.05 90.678 90)
 			(effects
 				(font
@@ -2536,6 +2626,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C60491 "
+			(at 146.05 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100KL"
+			(at 146.05 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e70cfd1c-e291-4342-89df-7f42c11c678e")
 		)
@@ -2545,7 +2653,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "R39")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -2570,7 +2678,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CR2012"
+		(property "Value" "CR1220"
 			(at 110.49 59.1184 0)
 			(effects
 				(font
@@ -2579,7 +2687,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Battery_Custom:BAT_2895"
 			(at 106.68 58.166 90)
 			(effects
 				(font
@@ -2598,6 +2706,24 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" "C5495443"
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "2895"
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -2630,7 +2756,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4acc6aa9-c25b-4d3c-aa8f-778d4468b159")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR049"
 			(at 102.87 77.47 0)
 			(effects
 				(font
@@ -2680,7 +2806,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR038")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -2697,7 +2823,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54002ddf-0dec-46a9-a930-217291a9296e")
-		(property "Reference" "Q13"
+		(property "Reference" "Q3"
 			(at 90.17 48.26 90)
 			(effects
 				(font
@@ -2743,6 +2869,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C2932927"
+			(at 90.17 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "BSS83PH6327"
+			(at 90.17 57.15 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "90614008-52a5-4ef0-8ff2-5b798805b070")
 		)
@@ -2755,7 +2899,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "Q13")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -2789,7 +2933,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
 			(at 157.48 81.28 0)
 			(effects
 				(font
@@ -2808,6 +2952,24 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 152.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB PN" ""
+			(at 152.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" ""
 			(at 152.4 81.28 0)
 			(effects
 				(font
@@ -2837,7 +2999,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "727ef7c3-9506-4270-813c-4a09aa866bda")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR051"
 			(at 152.4 92.71 0)
 			(effects
 				(font
@@ -2887,7 +3049,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR037")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -2903,7 +3065,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "820bce93-94aa-4839-b183-ed307eeca2f7")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR052"
 			(at 129.54 102.87 0)
 			(effects
 				(font
@@ -2953,7 +3115,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR033")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -2969,7 +3131,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d1e8d0b-82b6-44bd-8543-b0dd5a5a3b25")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR047"
 			(at 147.32 73.66 0)
 			(effects
 				(font
@@ -3019,7 +3181,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR036")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -3034,7 +3196,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9d49e76d-06c0-4203-a617-a51d2d8b4d6a")
-		(property "Reference" "R40"
+		(property "Reference" "R24"
 			(at 112.014 77.47 0)
 			(effects
 				(font
@@ -3051,7 +3213,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 112.268 77.47 90)
 			(effects
 				(font
@@ -3078,6 +3240,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C105871"
+			(at 110.49 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-074K7L"
+			(at 110.49 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8c4f4f1e-a43d-4ce0-b185-31c1b68bf088")
 		)
@@ -3087,7 +3267,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "R40")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -3102,7 +3282,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a464ab98-0923-43f0-b490-02bbd6c94560")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR044"
 			(at 147.32 63.5 0)
 			(effects
 				(font
@@ -3152,7 +3332,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR032")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -3168,7 +3348,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab38687f-c637-46ea-806d-f3e5f4602282")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR046"
 			(at 106.68 68.58 0)
 			(effects
 				(font
@@ -3218,7 +3398,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR035")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -3234,7 +3414,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b45967f8-6d28-4c12-9637-a57c00dc9c93")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR050"
 			(at 82.55 81.28 0)
 			(effects
 				(font
@@ -3284,7 +3464,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR045")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -3300,7 +3480,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc8fe555-21e2-46aa-877c-19f3e8e20883")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR048"
 			(at 90.17 78.74 0)
 			(effects
 				(font
@@ -3350,7 +3530,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR044")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -3365,7 +3545,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c48afe94-dcaf-42d4-ae6f-9ac4ca99aaa3")
-		(property "Reference" "R44"
+		(property "Reference" "R23"
 			(at 79.502 71.12 0)
 			(effects
 				(font
@@ -3381,7 +3561,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 84.328 71.12 90)
 			(effects
 				(font
@@ -3408,6 +3588,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C60491 "
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-07100KL"
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "36e98784-67da-45cf-8b33-72839323df2d")
 		)
@@ -3417,7 +3615,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "R44")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -3433,7 +3631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8b80d12-aefe-43fb-aceb-0f769f03becc")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR043"
 			(at 106.68 58.42 0)
 			(effects
 				(font
@@ -3483,7 +3681,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "#PWR034")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -3499,7 +3697,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d24ab1e4-9f2a-41f9-ac15-70b8eaf3fad4")
-		(property "Reference" "C25"
+		(property "Reference" "C28"
 			(at 137.16 62.2299 0)
 			(effects
 				(font
@@ -3517,7 +3715,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 134.3152 67.31 0)
 			(effects
 				(font
@@ -3544,6 +3742,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C77014"
+			(at 133.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "GRM155R71E104KE14D"
+			(at 133.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "abb0f0fe-7c9f-4372-a85b-c5fda1c42b23")
 		)
@@ -3553,7 +3769,7 @@
 		(instances
 			(project ""
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "C25")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -3568,7 +3784,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d8bebae7-819a-4450-beee-867b3e009ead")
-		(property "Reference" "R43"
+		(property "Reference" "R22"
 			(at 97.536 58.42 90)
 			(effects
 				(font
@@ -3584,7 +3800,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 93.472 58.42 90)
 			(effects
 				(font
@@ -3611,6 +3827,24 @@
 				(hide yes)
 			)
 		)
+		(property "JLCPCB PN" "C138033 "
+			(at 95.25 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR PN" "RC0402FR-071ML"
+			(at 95.25 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ec7c091e-c9d1-46c7-9535-70e4c29e06d2")
 		)
@@ -3620,7 +3854,7 @@
 		(instances
 			(project "precision-clock"
 				(path "/3cbd0e8e-3ba4-43b1-82ac-749e7a469b5f/b1d4eb23-a2bb-480a-90a1-dafbdf84a746"
-					(reference "R43")
+					(reference "R22")
 					(unit 1)
 				)
 			)
