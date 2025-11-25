@@ -137,6 +137,7 @@ void clock_decode(char * str) {
         localclk.month = tpv.time->month;
         localclk.date = tpv.time->date;
         
+        // Update ms of the day
         int32_t delta_ms = time_to_ms(tpv.time) - time_to_ms(&last_pps);
         int32_t new_time = time_to_ms(&localclk) + delta_ms;
         if (new_time > 86400000LL)
